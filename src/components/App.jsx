@@ -3,9 +3,10 @@ import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import { useSelector } from 'react-redux';
 import { Container, StyledText, StyledTitle, StyledHeading } from './Styled';
+import { selectContacts } from '../redux/selectors';
 
 export const App = () => {
-  const { contacts } = useSelector(state => state.phonebook);
+  const { contacts } = useSelector(selectContacts);
 
   return (
     <Container>

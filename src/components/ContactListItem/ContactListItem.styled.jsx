@@ -1,7 +1,6 @@
-import { Component } from 'react';
 import styled from 'styled-components';
 
-const StyledContactItem = styled.li`
+export const StyledContactItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,13 +18,13 @@ const StyledContactItem = styled.li`
   border-radius: 5px;
 `;
 
-const StyledSpan = styled.span`
+export const StyledSpan = styled.span`
   opacity: 0.6;
   font-weight: 700;
   font-size: 18px;
 `;
 
-const StyledBtn = styled.button`
+export const StyledBtn = styled.button`
   background-color: #ff6961;
   color: #fff;
   border: none;
@@ -40,18 +39,3 @@ const StyledBtn = styled.button`
     transform: scale(0.95);
   }
 `;
-
-export class ContactListItem extends Component {
-  render() {
-    return this.props.filteredContacts.map(item => (
-      <StyledContactItem key={item.id}>
-        <p>
-          <StyledSpan>{item.name}:</StyledSpan> {item.number}
-        </p>
-        <StyledBtn onClick={() => this.props.onDeleteContact(item.id)}>
-          Delete
-        </StyledBtn>
-      </StyledContactItem>
-    ));
-  }
-}

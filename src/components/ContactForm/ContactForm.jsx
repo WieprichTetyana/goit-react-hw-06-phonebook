@@ -8,7 +8,7 @@ import {
 } from './ContactForm.styled';
 import { nanoid } from 'nanoid';
 import { createContactAction } from '../../redux/phonebookSlice';
-import { selectContacts } from '../redux/selectors';
+import { selectContacts } from '../../redux/selectors';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();

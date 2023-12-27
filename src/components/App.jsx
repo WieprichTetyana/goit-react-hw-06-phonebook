@@ -6,7 +6,7 @@ import { Container, StyledText, StyledTitle, StyledHeading } from './Styled';
 import { selectContacts } from '../redux/selectors';
 
 export const App = () => {
-  const { contacts } = useSelector(selectContacts);
+  const contacts = useSelector(selectContacts);
 
   return (
     <Container>

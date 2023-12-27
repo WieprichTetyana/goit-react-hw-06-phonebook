@@ -5,23 +5,19 @@ import {
   StyledSpan,
   StyledBtn,
 } from './ContactListItem.styled';
+import { selectContacts, selectFilter } from '../../redux/selectors';
 
 export const ContactListItem = () => {
   const dispatch = useDispatch();
 
-  const filter = useSelector(state => state.phonebook.filter);
-  const contacts = useSelector(state => state.phonebook.contacts);
+  const filter = useSelector(selectFilter);
+  const contacts = useSelector(selectContacts);
 
   const getFilteredContacts = () => {
     return contacts.filter(item =>
       item.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
-  /* const filteredContacts = useMemo(() => {
-    return contacts.filter(item =>
-      item.name.toLowerCase().includes(filter.toLowerCase())
-    );
-  }, [contacts, filter]); */
 
   return getFilteredContacts().map(item => (
     <StyledContactItem key={item.id}>
